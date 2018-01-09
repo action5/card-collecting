@@ -13,7 +13,7 @@ contract Ownable {
 		require(msg.sender == owner);
 		_;
 	}
-	
+
 	modifier onlyAuthorized {
 		require(accessAllowed[msg.sender] == true);
 		_;
