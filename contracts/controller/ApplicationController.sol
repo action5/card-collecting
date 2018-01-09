@@ -1,6 +1,6 @@
 pragma solidity ^0.4.17;
 
-import "./IApplicationController.sol"
+import "./IApplicationController.sol";
 import "../utility/Mortal.sol";
 import "../utility/Escrow.sol";
 import "../storage/ApplicationStorage.sol";
@@ -37,7 +37,7 @@ contract ApplicationController is Mortal, IApplicationController {
 			require(buyer != seller);
 			require(buyer.balance >= price);
 		}
-		
+
 		Escrow escrow = new Escrow(cardIndex, seller, buyer, price, applicationStorage);
 		applicationStorage.addEscrow(escrow);
 		EscrowCreation(cardIndex, seller, buyer, price);
